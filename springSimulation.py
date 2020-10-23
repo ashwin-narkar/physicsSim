@@ -1,5 +1,6 @@
 import physicsSim
 import physicsObject
+import forces
 from tkinter import *
 import time
 import math
@@ -23,7 +24,7 @@ ball1.set_velocity(0,0)
 ball1.set_position(5,0)
 ball1.set_mass(10)
 
-springforce = physicsObject.Force(ball1)
+springforce = forces.Force(ball1)
 k = 8
 equilPosition = (0,0)
 springforce.set_xcomp(-1*k* (ball1.get_position()[0] - equilPosition[0]) )

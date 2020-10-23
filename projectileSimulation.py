@@ -1,5 +1,6 @@
 import physicsSim
 import physicsObject
+import forces
 from tkinter import *
 import time
 import math
@@ -18,7 +19,7 @@ ball1.set_position(0,0)
 ball1.set_accel(0,-9.8)
 ball1.set_mass(10)
 
-gravity = physicsObject.Force(ball1)
+gravity = forces.Force(ball1)
 g = -9.81
 gravity.set_ycomp(g*ball1.get_mass())
 
@@ -54,7 +55,7 @@ while sim_data is not None:
     if new_y < 0:
     	break
     gui.update()
-    time.sleep(0.025)
+    time.sleep(0.05)
 
 print("Sim Complete")
 
