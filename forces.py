@@ -3,14 +3,11 @@ class Force():
 		self.fx = 0
 		self.fy = 0
 		
-		self.object = physicsObject
-		self.mass = self.object.get_mass()
-
-	def get_mass(self):
-		return self.mass
-
-	def set_mass(self,m):
-		self.mass = m
+		self.objects = []
+		self.objects.append(physicsObject)
+		
+	def get_objects(self):
+		return self.objects
 
 	def set_xcomp(self,x):
 		self.fx = x
@@ -21,7 +18,5 @@ class Force():
 	def get_force(self):
 		return (self.fx,self.fy)
 
-	def get_accel(self):
-		if self.mass <= 0:
-			raise ValueError("Negative or 0 mass object cannot have force")
-		return (self.fx / self.mass , self.fy / self.mass)
+	def update_force(self):
+		pass

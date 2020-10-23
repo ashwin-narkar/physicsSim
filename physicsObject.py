@@ -27,11 +27,11 @@ class PhysicsObject:
 		if self.mass <= 0:
 			raise ValueError("0 or negative mass object")
 		for f in self.forces:
-			if f.get_mass() != self.mass:
+			if self not in f.get_objects():
 				raise ValueError("Unequal mass for force and object")
-			(delta_ax, delta_ay) = f.get_accel()
-			self.accel[0] = delta_ax
-			self.accel[1] = delta_ay
+			(fx, fy) = f.get_force()
+			self.accel[0] = fx / self.mass
+			self.accel[1] = fy / self.mass
 
 
 	def update_velocity(self, delta_time):
