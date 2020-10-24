@@ -27,7 +27,7 @@ class PhysicsObject:
 		if self.mass <= 0:
 			raise ValueError("0 or negative mass object")
 		for f in self.forces:
-			if self not in f.get_objects():
+			if self is not f.get_object():
 				raise ValueError("Unequal mass for force and object")
 			(fx, fy) = f.get_force()
 			self.accel[0] = fx / self.mass
