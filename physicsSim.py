@@ -12,6 +12,11 @@ class PhysicsSim():
 	def get_object_data(self,o):
 		return self.objects[o]
 
+	def set_params(self,ti,tf,dt):
+		self.time_initial = ti
+		self.time = self.time_initial
+		self.timeInterval = dt
+		self.time_final = tf
 
 	def simulate(self):
 		if self.time <= self.time_final:
