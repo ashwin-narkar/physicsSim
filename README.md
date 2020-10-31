@@ -1,4 +1,4 @@
-This is a collection of programs taht simulate common physics scenarios.
+This is a collection of programs that simulate common physics scenarios.
 
 Simply run:
 
